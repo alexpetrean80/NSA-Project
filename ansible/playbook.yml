@@ -1,0 +1,7 @@
+- name: Provision Vagrant 
+  hosts: all
+  become: true
+  tasks:
+    - import_tasks: tasks/repos.yml
+    - import_tasks: tasks/packages.yml
+    - import_tasks: tasks/services.yml

@@ -1,0 +1,23 @@
+- name: Enable firewall service
+  systemd:
+    name: ufw.service
+    state: started
+    daemon_reload: true
+
+- name: Enable cron service
+  systemd:
+    name: cron.service
+    state: started
+    daemon_reload: true
+
+- name: Enable nginx service
+  systemd:
+    name: nginx.service
+    state: started
+    daemon_reload: true
+
+- name: Enable ftp service
+  systemd:
+    name: vsftpd.service
+    state: started
+    daemon_reload: true

@@ -1,0 +1,12 @@
+packages:
+  - vim
+  - htop
+  - neofetch
+  - tmux
+  - cron
+  - ufw
+  - timeshift
+  - nginx
+  - vsftpd
+
+configs_path: ../../../configs

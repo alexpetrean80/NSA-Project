@@ -1,0 +1,4 @@
+- name: Setup firewall defaults
+  template:
+    src: "{{ configs_path }}/ufw/defaults.conf"
+    dest: "/etc/default/ufw"

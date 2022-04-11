@@ -1,0 +1,13 @@
+- name: Update repositories
+  apt:
+    update_cache: yes
+
+- name: Update packages
+  apt:
+    name: "*"
+    state: latest
+
+- name: Install essential packages
+  package:
+    name: "{{ packages }}"
+    state: latest
