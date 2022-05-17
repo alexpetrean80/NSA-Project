@@ -1,0 +1,12 @@
+Log created: 2022-05-15T19:57:36.276660000Z
+Process ID:  79618 (0x13702)
+Parent PID:  1612 (0x64c)
+Executable:  /usr/lib64/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib64/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: NSA-Project_default_1652601682193_2151
+Arg[3]: --startvm
+Arg[4]: f64f0f02-f39b-44bf-b673-eb9f7d6c9714
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2

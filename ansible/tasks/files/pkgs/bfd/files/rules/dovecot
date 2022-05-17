@@ -1,0 +1,18 @@
+# failed logins from a single address before ban
+# uncomment to override conf.bfd trig value
+# TRIG="30"
+
+# uncomment to disable alerting for this rule 
+# SKIP_ALERT="1"
+
+# file must exist for rule to be active
+REQ="/usr/sbin/dovecot"
+
+if [ -f "$REQ" ]; then
+	PORTS="110,143,993,995"
+	LP="/var/log/maillog"
+	TLOG_TF="dovecot"
+
+	## DOVECOT IMAP/POP3
+	ARG_VAL=`$TLOG_PATH $LP $TLOG_TF | egrep '(imap|pop3)-login.*(Authentication failure|auth failed|Aborted login|ried to use disabled)' | egrep -v 'no auth attempts' | sed -n -e '/auth failed/s/.*user=<\(.*\)>.*rip=\([^ ]*\),.*/\2:\1/p' | egrep '^[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+:.*$'`
+fi

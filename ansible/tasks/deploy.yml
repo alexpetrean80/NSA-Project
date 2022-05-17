@@ -1,0 +1,4 @@
+- name: Copy site
+  copy:
+    src: "{{web_path }}/quickstart/public/"
+    dest: "/var/www/html"

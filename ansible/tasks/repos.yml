@@ -1,3 +1,0 @@
-- name: Add timeshift repository
-  apt_repository:
-    repo: ppa:teejee2008/ppa

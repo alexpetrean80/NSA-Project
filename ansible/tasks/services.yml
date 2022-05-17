@@ -10,14 +10,20 @@
     state: started
     daemon_reload: true
 
-- name: Enable nginx service
+- name: Enable apache service
   systemd:
-    name: nginx.service
+    name: apache2.service
     state: started
     daemon_reload: true
 
 - name: Enable ftp service
   systemd:
     name: vsftpd.service
+    state: started
+    daemon_reload: true
+
+- name: Enable unattended-upgrades service
+  systemd:
+    name: unattended-upgrades.service
     state: started
     daemon_reload: true

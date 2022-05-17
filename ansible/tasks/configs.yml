@@ -1,4 +1,44 @@
-- name: Setup firewall defaults
-  template:
+- name: Copy firewall defaults
+  copy:
     src: "{{ configs_path }}/ufw/defaults.conf"
     dest: "/etc/default/ufw"
+
+- name: Copy firewall config
+  copy:
+    src: "{{ configs_path }}/ufw/ufw.conf"
+    dest: "/etc/ufw/ufw.conf"
+
+- name: Copy firewall user.rules
+  copy:
+    src: "{{ configs_path }}/ufw/user.rules"
+    dest: "/etc/ufw/user.rules"
+
+- name: Copy firewall user6.rules
+  copy:
+    src: "{{ configs_path }}/ufw/user6.rules"
+    dest: "/etc/ufw/user6.rules"
+
+- name: Copy FTP config
+  copy:
+    src: "{{ configs_path }}/vsftp/vsftpd.conf"
+    dest: "/etc/vsftpd.conf"
+
+- name: Copy unattended upgrades config
+  copy:
+    src: "{{ configs_path }}/unattended-upgrades/50unattended-upgrades.pl"
+    dest: "/etc/apt/apt.conf.d/50unattended-upgrades"
+
+- name: Copy automatic upgrades config
+  copy:
+    src: "{{ configs_path }}/unattended-upgrades/20auto-upgrades.pl"
+    dest: "/etc/apt/apt.conf.d/20auto-upgrades"
+
+- name: Copy rsnapshot backup config
+  copy:
+    src: "{{ configs_path }}/rsnapshot/rsnapshot.conf"
+    dest: "/etc/rsnapshot.conf"
+
+- name: Copy rsnapshot cron file
+  copy:
+    src: "{{ configs_path }}/rsnapshot/cron"
+    dest: "/etc/cron.d/rsnapshot"

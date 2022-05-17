@@ -5,8 +5,21 @@ packages:
   - tmux
   - cron
   - ufw
-  - timeshift
-  - nginx
+  - rsnapshot
+  - apache2
   - vsftpd
+  - unattended-upgrades
+  - apf-firewall
+  - net-tools
 
-configs_path: ../../../configs
+archives_path: archives
+
+configs_path: configs
+
+pkgs_path: pkgs
+
+services_path: services
+
+web_path: web
+  
+  
